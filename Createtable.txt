@@ -1,0 +1,20 @@
+CREATE TABLE products_1(Product_Id int primary key NOT NULL ,Product_Name varchar(100),Quantity int,Price int);
+
+CREATE TABLE sales_details_1(Order_Id VARCHAR(20)primary key NOT NULL,Customer_Id int,Sales_Price INT,Date_of_Sale DATE);
+
+CREATE TABLE order_details_1(Order_Id VARCHAR(20)primary key NOT NULL,Product varchar(100),Quantity INT,Price int,Total int);
+
+INSERT INTO products_1(Product_Id ,Product_Name, Quantity, Price)
+VALUES(4001,'reynolds pen',1000,10),(4002,'LunchBox',200,120),(4003,'Plastic Bottle',300,60),(4004,'Classmate Book',130,30);
+
+INSERT INTO sales_details_1(Order_Id,Customer_Id ,Sales_Price,Date_of_Sale)
+VALUES('I4001',2, 5000,'2022-04-15'),('I4002',10, 10000,'2022-02-22'),('I4010',5, 800,'2021-03-22'),('I4056',23, 100000,'2022-04-26');
+
+INSERT INTO order_details_1(Order_Id,Product, Quantity, Price,Total)
+VALUES ('I4001','Pen', 2,10,20),('I4002','Classmate Book', 3,30,90),('I4003','Plastic Bottle', 1,60,60),('I4004','LunchBox', 3,120,360);
+
+SELECT * FROM products_1;
+SELECT * FROM sales_details_1;
+SELECT * FROM order_details_1;
+
+UPDATE products_1 SET Product_Name = 'Brush', Price= 2 WHERE Product_Id = 4002;
