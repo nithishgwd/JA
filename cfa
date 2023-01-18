@@ -1,0 +1,22 @@
+sudo apt-get update
+sudo apt-get install apache2
+sudo apt-get install libapache2-mod-php
+sudo apt-get install php php-mysql 
+sudo apt-get install mysql-client -y
+git clone https://github.com/sreepathysois/phpmysql-app.git
+cd /phpmysql-app/php/online-shopping-system
+sudo cp -rf * /var/www/html/
+cd /var/www/html/ 
+cd var/www/html ls 
+Sudo rm -rf index.html
+ls
+sudo systemctl restart apache2
+cd database/
+sudo mysql -h rds end-point -u admin -p
+Enter password:
+show databases;
+use mywebdb;
+source onlineshop.sql;
+cd ..
+sudo vi db.php
+sudo systemctl restart apache2
